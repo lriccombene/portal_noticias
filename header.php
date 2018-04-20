@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 4, from LayoutIt!</title>
+    <title>Portal de Noticias Cooperativa Slam Vsoft</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -22,14 +22,15 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="#">Home</a>
+						<a href="#">Slam</a>
 					</li>
 					<li class="breadcrumb-item">
-						<a href="#">Library</a>
+						<a href="#">contacto</a>
 					</li>
-					<li class="breadcrumb-item active">
-						Data
+					<li class="breadcrumb-item">
+						<a href="#">login</a>
 					</li>
+
 				</ol>
 			</nav>
 		</div>
@@ -37,7 +38,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h3>
-				Nombre del sitio Titular
+				Portal de Noticias Cooperativa Slam Vsoft
 			</h3>
 		</div>
 	</div>
@@ -46,14 +47,19 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="#">Home</a>
+						<a href="#">Principal</a>
 					</li>
 					<li class="breadcrumb-item">
-						<a href="#">Library</a>
+						<a href="#">Ultimas Noticias</a>
 					</li>
-					<li class="breadcrumb-item active">
-						Data
+					<li class="breadcrumb-item">
+						<a href="#">Ultimos Videos</a>
 					</li>
+					<li class="breadcrumb-item">
+						<a href="#">Recomendados</a>
+					</li>
+
+
 				</ol>
 			</nav>
 		</div>
