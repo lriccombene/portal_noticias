@@ -1,6 +1,13 @@
 <?php
     require_once 'header.php';
 ?>
+<?php include 'noticia.php';
+	  include 'video.php';
+	  include 'ultimaNoticia.php';
+	  include 'ultimoVideo.php';
+	  
+
+?>
 
 	<div class="row">
 		<div class="col-md-6">
