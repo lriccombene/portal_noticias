@@ -1,5 +1,9 @@
 <?php
     require_once 'header.php';
+    
+    require_once 'noticia.php'
+    $obj_noticia = new  app\clase\Noticia();
+    
 ?>
 
     <form id="form_noticias" method="get" action="">
@@ -15,13 +19,14 @@
     		
 		<label>Categoria </label>
 			<div>
-		        <select id="categoriaoption" name="categorioselect"> 
-			        <option value="" selected="selected"></option>
-                    <option value="1">SLAM</option>
-                    <option value="2">EJEZETA</option>
-                    <option value="3">REDLAM</option>
+		      <select id="unidadNegocio" name="unidadNegocio"> 
+		       <? php foreach($obj_noticia -> get_Lista_categorias() as $categoria):
+		                     {
+		                        echo "<option> $categoria</option>";
+		                      }
+		       ?>
 
-		        </select>
+            </select>
 		    </div> 
 
 		<label >Imagen </label>
