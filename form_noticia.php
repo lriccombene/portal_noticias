@@ -1,8 +1,38 @@
 <?php
     require_once 'header.php';
+    require_once 'clases/noticia.php';
     
-    require_once 'noticia.php'
-    $obj_noticia = new  app\clase\Noticia();
+    /**
+    // si saco la clase y la llevo a su lugar correcto que es el archivo que esta dentro de la carpeta clases 
+    //no funca la instancia la llamada require_one funciona ok 
+        class noticia{
+        
+        public $fecha;
+        public $categoria ;
+        public $imagen ; //directoria o ruta de archivo
+        public $descripcion ;
+        public $titulo ;
+        public $subtitulo ;
+        public $copete ;
+        public $autor ;
+        public $idnoticia ;
+        
+        public function __construct() {} 
+     
+        public function get_Lista_categorias()
+        {
+            $lista_categorias =  array("Hardware","Programacion","Arte digital","Internacional"); 
+            return $lista_categorias;
+        }
+        
+    }
+    */
+
+?>
+<?php
+ //require_once "./clases/noticia.php" ; 
+	$obj_noticias = new app\clases\noticia; // 
+	//namespace es app/clases
     
 ?>
 
@@ -19,15 +49,18 @@
     		
 		<label>Categoria </label>
 			<div>
-		      <select id="unidadNegocio" name="unidadNegocio"> 
-		       <? php foreach($obj_noticia -> get_Lista_categorias() as $categoria):
-		                     {
-		                        echo "<option> $categoria</option>";
-		                      }
-		       ?>
+				
+			<select id="unidadNegocio" name="unidadNegocio"> 
+		      
+		      <?php 
+					//$colors = array("Hardware","Programacion","Arte digital","Internacional"); 
 
+					foreach ($obj_noticias->get_Lista_categorias() as $value) {
+					   echo "<option> $value </option>";
+					}
+			  ?>
             </select>
-		    </div> 
+		      </div> 
 
 		<label >Imagen </label>
 		<div>

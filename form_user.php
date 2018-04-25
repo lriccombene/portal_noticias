@@ -1,5 +1,8 @@
 <?php
     require_once 'header.php';
+    require_once 'clases/user.php';
+
+	$obj_user = new app\clases\user;
 ?>
 
     <form id="form_user" method="get" action="">
@@ -18,12 +21,15 @@
 		
 		<label>Role </label>
 		<div>
-		    <select id="categoriaoption" name="categorioselect"> 
-		        <option value="" selected="selected"></option>
-                <option value="1">Administrador</option>
-                <option value="2">Periodista</option>
-                <option value="3">Clasico</option>
-            </select>
+			<select id="tipoUser" name="tipoUser"> 
+					      
+		      <?php 
+					foreach ($obj_user->get_Lista_tipo_usu() as $value) {
+					   echo "<option> $value </option>";
+					}
+			  ?>
+				
+			</select>
 		</div> 
 		  
 		<label >Password </label>
@@ -39,3 +45,6 @@
 <?php
     			require_once 'footer.php';
 ?>
+
+
+		    

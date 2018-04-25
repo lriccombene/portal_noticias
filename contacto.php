@@ -19,14 +19,16 @@
 			<input id="email" name="email" type="text" maxlength="255" value=""> 
 		</div>
 		
-		<label>Aquin de nosotros </label>
+		<label>Aquien de nosotros </label>
 		<div>
 		    <select id="unidadNegocio" name="unidadNegocio"> 
-		       <? php foreach($obj_contacto -> get_Lista_unidad_negocio() as $unid_negocio):
-		                     {
-		                        echo "<option> $unid_negocio</option>";
-		                      }
-		       ?>
+		       <?php 
+					$colors = array("Administrador","Periodista","Clasico"); 
+
+					foreach ($colors as $value) {
+					   echo "<option> $value </option>";
+					}
+			  ?>
 
             </select>
 		</div> 
