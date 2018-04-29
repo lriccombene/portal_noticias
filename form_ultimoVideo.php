@@ -1,12 +1,9 @@
 <?php
     require_once 'header.php';
     require_once 'clases/video.php';
-	
-?>
-<?php
- //require_once "./clases/noticia.php" ; 
+ 
 	$obj_video = new app\clases\video; // 
-	//namespace es app/clases
+
     
 ?>
 
@@ -20,7 +17,7 @@
 		<div>
 			<input id="descripcion" name="descripcion" type="text" maxlength="255" value="<?php echo $_GET["titulo"];?>"> 
 		</div> 
-    <input id="btn_buscar" type="submit" name="submit" value="Buscar">
+    <input id="btn_buscar" type="submit" name="btn_buscar" value="Buscar">
 </form>
 <div>
     <table border="1">
@@ -29,19 +26,21 @@
             <td>Descripcion</td>
             <td>Link</td>
             <td>id_video</td>
-            <td>POSICION</td>
+            <td>Posicion</td>
         </tr>
-          <?php
-                echo"<tr>";
-          ?>
-         <?php
-                foreach ($obj_video->get_video() as $value) {
-                    
-                    echo"<td>$value </td>";
+ <?php
+                foreach ($obj_video::get_videos() as $value) {
+                    if(!(array_key_exists('btn_buscar', $_GET)) ||
+                        isset($_GET["descripcion"]) && $_GET["descripcion"]==$value["descripcion"]){
+                    echo "<tr><td>{$value["fecha"]}</td>
+                             <td>{$value["descripcion"]}</td>
+                             <td>{$value["link"]}</td>
+                             <td>{$value["id_video"]}</td>
+                             
+                        </tr>";
                 }
-         ?>
-         <?php
-                echo"</tr>";
+                    
+                }
          ?>
     </table>
 </div>

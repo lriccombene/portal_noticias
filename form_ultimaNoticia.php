@@ -2,12 +2,7 @@
     require_once 'header.php';
     require_once 'clases/noticia.php';
 	
-?>
-<?php
- //require_once "./clases/noticia.php" ; 
 	$obj_noticias = new app\clases\noticia; // 
-	//namespace es app/clases
-    
 ?>
 
 
@@ -20,7 +15,7 @@
 		<div>
 			<input id="titulo" name="titulo" type="text" maxlength="255" value="<?php echo $_GET["titulo"];?>"> 
 		</div> 
-    <input id="btn_buscar" type="submit" name="submit" value="Buscar">
+    <input id="btn_buscar" type="submit" name="btn_buscar" value="Buscar">
 </form>
 <div>
     <table border="1">
@@ -34,12 +29,16 @@
         </tr>
          <?php
                 foreach ($obj_noticias::get_noticias() as $value) {
+                    if(!(array_key_exists('btn_buscar', $_GET)) ||
+                        isset($_GET["titulo"]) && $_GET["titulo"]==$value["descripcion"]){
                     echo "<tr><td>{$value["fecha"]}</td>
                              <td>{$value["descripcion"]}</td>
                              <td>{$value["categoria"]}</td>
                              <td>{$value["autor"]}</td>
                              <td>{$value["idnoticia"]}</td>
                         </tr>";
+                }
+                    
                 }
          ?>
     </table>

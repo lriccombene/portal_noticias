@@ -1,12 +1,26 @@
 <?php
+
     namespace app\clases;
     
     class video{
         
         public $id_video;
         public $descripcion ;
-        public $link ;
-        public $fecha ;
+        public $link;
+        public $fecha;
+        private static $lista_videos = [
+            [   id_video=>"1",
+                descripcion =>"Festival de software libre 2017",
+                link =>"www.slamcoop.com.ar",
+                fecha =>"2017-06-02"
+            ],
+            [
+                id_video=>"1",
+                descripcion =>"Festival de software libre 2018",
+                link =>"www.slamcoop.com.ar",
+                fecha =>"2018-06-02"
+            ]
+        ];
 
         /*public function __construct($descripcion,$link,$fecha) {
             $this->descripcion = $descripcion;
@@ -14,12 +28,12 @@
             $this->fecha = $fecha;
         }*/
         public function __construct() {} 
-        public function get_video()
+     
+        public static function get_videos():array
         {
-            $lista_noticias = ["2018-04-02","Festibal de software libre","www.Informatica.com",1];
-                           //["2018-04-02","Festibal de software libre","Informatica","Pagina12",1]];
-            return $lista_noticias;  
+            return self::$lista_videos;  
         }
+        
         
     }
 ?>

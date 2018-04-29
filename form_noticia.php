@@ -1,39 +1,10 @@
 <?php
     require_once 'header.php';
     require_once 'clases/noticia.php';
-    
-    /**
-    // si saco la clase y la llevo a su lugar correcto que es el archivo que esta dentro de la carpeta clases 
-    //no funca la instancia la llamada require_one funciona ok 
-        class noticia{
-        
-        public $fecha;
-        public $categoria ;
-        public $imagen ; //directoria o ruta de archivo
-        public $descripcion ;
-        public $titulo ;
-        public $subtitulo ;
-        public $copete ;
-        public $autor ;
-        public $idnoticia ;
-        
-        public function __construct() {} 
-     
-        public function get_Lista_categorias()
-        {
-            $lista_categorias =  array("Hardware","Programacion","Arte digital","Internacional"); 
-            return $lista_categorias;
-        }
-        
-    }
-    */
-
 ?>
 <?php
- //require_once "./clases/noticia.php" ; 
 	$obj_noticias = new app\clases\noticia; // 
-	//namespace es app/clases
-    
+
 ?>
 
     <form id="form_noticias" method="get" action="">
