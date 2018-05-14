@@ -1,5 +1,3 @@
-
-
 <? php
     namespace app\clases;
     
@@ -9,9 +7,17 @@
         public $id_noticia ;
         public $posicion ;
         
-        public function __construct($id_noticia,$posicion) {
+        
+        public function __construct(){}
+        
+        /*public function __construct($id_noticia,$posicion) {
             $this->id_noticia = $id_noticia;
             $this->posicion = $posicion;
-        }
+        }*/
+        
+        
     }
 ?>
+
+
+

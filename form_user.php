@@ -5,7 +5,7 @@
 	$obj_user = new app\clases\user;
 ?>
 
-    <form id="form_user" method="get" action="">
+    <form id="form_user" method="post" action="">
 	    <div >
 			<h2>Carga de Usuarios</h2>
 			<p>Aca se cargan los usuarios</p>

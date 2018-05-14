@@ -1,7 +1,7 @@
 <?php
     require_once 'header.php';
 ?>
-    <form id="form_login" method="get" action="">
+    <form id="form_login" method="post" action="">
 	    <div >
 			<h2>Login de usuarios</h2>
 			<p>Aca se logean los usuarios</p>

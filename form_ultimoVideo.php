@@ -8,14 +8,14 @@
 ?>
 
 
-<form id="form_ultimaNoticia" method="get" action="">
+<form id="form_ultimaNoticia" method="post" action="">
 	    <div>
 			<h2>Carga de Ubicacion de Videos</h2>
 			<p>Aca se cargan las ubicaciones de videos Ultimas videos</p>
 		</div>	
         <label >Descripcion </label>
 		<div>
-			<input id="descripcion" name="descripcion" type="text" maxlength="255" value="<?php echo $_GET["titulo"];?>"> 
+			<input id="descripcion" name="descripcion" type="text" maxlength="255" value="<?php echo $_POST["titulo"];?>"> 
 		</div> 
     <input id="btn_buscar" type="submit" name="btn_buscar" value="Buscar">
 </form>
@@ -30,8 +30,9 @@
         </tr>
  <?php
                 foreach ($obj_video::get_videos() as $value) {
-                    if(!(array_key_exists('btn_buscar', $_GET)) ||
-                        isset($_GET["descripcion"]) && $_GET["descripcion"]==$value["descripcion"]){
+                    if(!(array_key_exists('btn_buscar', $_POST)) ||
+                        empty($_POST["descripcion"])  ||
+                        isset($_POST["descripcion"]) && $_POST["descripcion"]==$value["descripcion"]){
                     echo "<tr><td>{$value["fecha"]}</td>
                              <td>{$value["descripcion"]}</td>
                              <td>{$value["link"]}</td>
@@ -44,7 +45,7 @@
          ?>
     </table>
 </div>
- <form id="form_ultima_noticias" method="get" action="">
+ <form id="form_ultima_noticias" method="$_POST" action="">
     <div>
          <label >Numero de posicion </label>
     		<div>

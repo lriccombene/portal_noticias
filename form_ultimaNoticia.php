@@ -6,14 +6,14 @@
 ?>
 
 
-<form id="form_ultimaNoticia" method="get" action="">
+<form id="form_ultimaNoticia" method="post" action="">
 	    <div>
 			<h2>Carga de Ubicacion de Noticias</h2>
 			<p>Aca se cargan las ubicaciones de noticias Ultimas noticias</p>
 		</div>	
         <label >Titulo </label>
 		<div>
-			<input id="titulo" name="titulo" type="text" maxlength="255" value="<?php echo $_GET["titulo"];?>"> 
+			<input id="titulo" name="titulo" type="text" maxlength="255" value="<?= isset($_POST["titulo"])?>"> 
 		</div> 
     <input id="btn_buscar" type="submit" name="btn_buscar" value="Buscar">
 </form>
@@ -27,10 +27,11 @@
             <td>IdNoticia</td>
             <td>POSICION</td>
         </tr>
-         <?php
+        <?php
                 foreach ($obj_noticias::get_noticias() as $value) {
-                    if(!(array_key_exists('btn_buscar', $_GET)) ||
-                        isset($_GET["titulo"]) && $_GET["titulo"]==$value["descripcion"]){
+                    if(!(array_key_exists('btn_buscar', $_POST)) ||
+                        empty($_POST["titulo"])  ||
+                        isset($_POST["titulo"]) && $_POST["titulo"]==$value["descripcion"]){
                     echo "<tr><td>{$value["fecha"]}</td>
                              <td>{$value["descripcion"]}</td>
                              <td>{$value["categoria"]}</td>

@@ -2,7 +2,7 @@
     require_once 'header.php';
 ?>
 
-    <form id="form_video" method="get" action="">
+    <form id="form_video" method="post" action="">
 	    <div >
 			<h2>Carga de Videoss</h2>
 			<p>Aca se cargan los videos</p>

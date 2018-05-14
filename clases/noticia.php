@@ -11,20 +11,22 @@
         public $subtitulo ;
         public $copete ;
         public $autor ;
-        public $idnoticia ;
+        public $id_noticia ;
         private static $lista_noticias = [
             [   fecha=>"2018-04-02",
-                descripcion =>"Festival de software libre",
+                descripcion =>"Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.",
                 categoria =>"Informatica",
                 autor =>"Pagina12",
-                idnoticia => 10
+                id_noticia => 10,
+                titulo=> "Festival de software libre"
             ],
             [
                 fecha =>"2017-06-02",
-                descripcion =>"PyDay",
-                categoria =>"Informatica",
-                autor =>"Telesur",
-                idnoticia => 1
+                descripcion => "PyDay",
+                categoria => "Informatica",
+                autor => "Telesur",
+                id_noticia => 1,
+                titulo=> "Informatica de software libre"
             ]
         ];
                            //["2018-04-02","Festibal de software libre","Informatica","Pagina12",1]];

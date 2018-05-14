@@ -7,7 +7,7 @@
 
 ?>
 
-    <form id="form_noticias" method="get" action="">
+    <form id="form_noticias" method="post" action="">
 	    <div>
 			<h2>Carga de Noticias</h2>
 			<p>Aca se cargan las noticias que se utilizaran en para ultimas noticias o la seccion de noticias</p>
