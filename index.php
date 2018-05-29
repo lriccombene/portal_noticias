@@ -2,19 +2,22 @@
     require_once 'header.php';
 ?>
 <?php
-	require_once 'clases/noticia.php';
-	 require_once 'clases/video.php';
+	  require_once 'clases/noticia.php';
+	  require_once 'clases/video.php';
 	  require_once 'clases/ultimaNoticia.php';
+	  require_once 'clases/posiciones.php';
 	 // require_once 'clases/ultimoVideo.php';
 	$obj_UltimaNoticias = new app\clases\ultimaNoticiaFrente; // 
 	$obj_noticias = new app\clases\noticia; // 
+        
+	
 	
 	 
 ?>
 <?php  
 
 	foreach ($obj_UltimaNoticias::get_UltimasNoticias() as $value) {
-            if($value["posicion"]==1){
+            if($value["posicion"]== \app\clases\Posiciones::principal){
 		foreach ($obj_noticias::get_noticias() as $value2) {
                    // echo "<p> {$value["id_noticia"]}</p>";
                   // echo "<p> {$value2["posicion"]}</p>";
@@ -36,7 +39,7 @@
                 		}//fin del if
                 	}
 				}//fin del if de posicion
-            if($value["posicion"]==2){
+            if($value["posicion"]== \app\clases\Posiciones::primera_arriba){
                 foreach ($obj_noticias::get_noticias() as $value2) {
                     if($value["id_noticia"]== $value2["id_noticia"]){
                         echo "<div class='row'>
