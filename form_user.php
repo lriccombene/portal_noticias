@@ -1,8 +1,9 @@
 <?php
     require_once 'header.php';
     require_once 'clases/user.php';
-
-	$obj_user = new app\clases\user;
+    use app\clases\user;
+    
+	$obj_user = new user;
 ?>
 
     <form id="form_user" method="post" action="">

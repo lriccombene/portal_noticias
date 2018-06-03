@@ -69,7 +69,20 @@
             return self::$lista_UltimasNoticias;  
         }
 
-
+        public static function listaUltimasNoticias(): array
+        {
+            $archivoBD = dirname(__FILE__).DIRECTORY_SEPARATOR.'bd'.DIRECTORY_SEPARATOR.'bd.sqlite';
+            $db = new \PDO('sqlite:'.$archivoBD);
+            // traigo todos porque son pocos
+            $todasLasNoticias = $db->query('select * from ultimaNoticiaFrente')->fetchAll();
+            $resultado = [];
+            foreach($todasLasNoticias as $noticia)
+            {
+                 $noticia = new Noticia($noticia['id_noticia'], $noticia['posicion'], $noticia['id_ult_noticia']);
+                 $resultado[] = $noticia;
+            }
+            return $resultado;
+        }
     }
     
 ?>

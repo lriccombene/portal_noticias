@@ -127,6 +127,29 @@
             return $lista_noticia;  
         }
         
+        public function obtenerImagenBase64():string
+        {
+            $archivoImg = dirname(__FILE__).DIRECTORY_SEPARATOR.'imgs'.DIRECTORY_SEPARATOR.$this->url;
+            $imagedata = file_get_contents($archivoImg);
+            $base64 = base64_encode($imagedata);
+            return '<img src="data:image/png;base64,'.$base64.'">';
+        }
+        
+        public static function listaNoticias(): array
+        {
+            $archivoBD = dirname(__FILE__).DIRECTORY_SEPARATOR.'bd'.DIRECTORY_SEPARATOR.'bd.sqlite';
+            $db = new \PDO('sqlite:'.$archivoBD);
+            // traigo todos porque son pocos
+            $todasLasNoticias = $db->query('select * from noticias')->fetchAll();
+            $resultado = [];
+            foreach($todasLasNoticias as $noticia)
+            {
+                 $noticia = new Noticia($noticia['fecha'], $noticia['descripcion'], $noticia['categoria'], $noticia['autor'], $noticia['id_noticia'],$noticia['titulo'],$noticia['titulo']);
+                 $resultado[] = $noticia;
+            }
+            return $resultado;
+        }
+        
     }
 
 

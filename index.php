@@ -15,27 +15,35 @@
 	 
 ?>
 <?php  
-
+	//foreach ($obj_UltimaNoticias::listaUltimasNoticias() as $value) {
 	foreach ($obj_UltimaNoticias::get_UltimasNoticias() as $value) {
-            if($value["posicion"]== \app\clases\Posiciones::principal){
-		foreach ($obj_noticias::get_noticias() as $value2) {
+		//if($value->posicion == \app\clases\Posiciones::principal){
+		if($value["posicion"]== \app\clases\Posiciones::principal){
+			//foreach ($obj_noticias::listaNoticias() as $value2) {
+			foreach ($obj_noticias::get_noticias() as $value2) {
                    // echo "<p> {$value["id_noticia"]}</p>";
                   // echo "<p> {$value2["posicion"]}</p>";
-                    
+                   //if($value->id_noticia == $value2->id_noticia"]){ 
+                   
+                  //<img alt='Bootstrap Image Preview' src=$value>
+                   //{$value2->titulo}
+                   //{$value2->descripcion}
                    if($value["id_noticia"]== $value2["id_noticia"]){
                             echo "<div class='row'><div class='col-md-6'>
                                     <img alt='Bootstrap Image Preview' src='http://www.layoutit.com/img/sports-q-c-140-140-3.jpg'>
                                     </div>
                                     <div class='col-md-6'>
                                     <h3>
-                                          {$value2["titulo"]}
+                                    
+                                        {$value2["titulo"]}
 
-				    </h3>
-				    <p>
-					{$value2["descripcion"]}
-				    </p>
-				   </div>
-				   </div>";
+								    </h3>
+								    <p>
+
+										{$value2["descripcion"]}
+								    </p>
+								   </div>
+								   </div>";
                 		}//fin del if
                 	}
 				}//fin del if de posicion

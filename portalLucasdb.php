@@ -4,22 +4,6 @@ echo "<pre>";
 // Abrir la base o crearla si no existe
 $db = new SQLite3('portalLucasdb.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
 
-
-
-
-// Crear la tabla si no existe
-/*fecha
-  categoria 
-  imagen ; //directoria o ruta de archivo
-  descripcion ;
-  titulo ;
-  subtitulo ;
-  copete ;
-  autor ;
-  id_noticia ;
-
-*/
-
 $db->query('CREATE TABLE IF NOT EXISTS `noticias` (
     `id_noticia` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     `categoria` VARCHAR,
@@ -124,3 +108,5 @@ echo("\n");
 
 $db->close();
 echo "</pre>";
+
+?>
